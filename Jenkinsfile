@@ -39,7 +39,7 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
       }
         ansiColor('xterm') {
-          sh 'terraform plan'
+          sh 'terraform plan -var-file="terraform.tfvars"
         }
     }
   }
