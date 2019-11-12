@@ -2,12 +2,11 @@
 
 node {
     /* .. snip .. */
-    stage('Deploy') {
+    stage('Login') {
         node {
         withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
-            sh 'az resource list'
         }
       }
     }
@@ -18,7 +17,6 @@ node {
           withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
-            sh 'az resource list'
         }
         ansiColor('xterm') {
           sh 'terraform init'
@@ -32,8 +30,7 @@ node {
       withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
-            sh 'az resource list'
-             {
+        {
         ansiColor('xterm') {
           sh 'terraform plan'
         }
@@ -48,9 +45,8 @@ node {
       node {
         withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
-            sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
-            sh 'az resource list' {
-          ansiColor('xterm') {
+            sh 'az account set -s $AZURE_SUBSCRIPTION_ID' 
+            { ansiColor('xterm') {
             sh 'terraform apply -auto-approve'
           }
         }
