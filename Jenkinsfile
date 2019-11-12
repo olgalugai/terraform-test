@@ -45,12 +45,14 @@ node {
         withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID' 
-            { ansiColor('xterm') {
+            }
+            
+             ansiColor('xterm') {
             sh 'terraform apply -auto-approve'
           }
         }
       }
-    }
+  }
 
     // Run terraform show
     stage('show') {
@@ -58,16 +60,14 @@ node {
         withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
-            sh 'az resource list' {
+            sh 'az resource list' 
+            }
+
           ansiColor('xterm') {
             sh 'terraform show'
           }
         }
       }
-    }
-  }
-  currentBuild.result = 'SUCCESS'
-}
 
 catch (err) {
   currentBuild.result = 'FAILURE'
