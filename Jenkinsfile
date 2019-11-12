@@ -39,9 +39,9 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
       }
         ansiColor('xterm') {
-          sh 'terraform plan -var "subscription_id = ${params.AZURE_SUBSCRIPTION_ID}"
-                                  "client_id 		   = ${params.AZURE_CLIENT_ID}"
-                                  "client_secret 	 = ${params.AZURE_CLIENT_SECRET}"
+          sh 'terraform plan -var "subscription_id = ${params.AZURE_SUBSCRIPTION_ID}",
+                                  "client_id 		   = ${params.AZURE_CLIENT_ID}",
+                                  "client_secret 	 = ${params.AZURE_CLIENT_SECRET}",
                                   "tenant_id       = ${params.AZURE_TENANT_ID}"'
         }
     }
