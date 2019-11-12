@@ -1,5 +1,11 @@
 // Jenkinsfile
-
+try {
+  stage('checkout') {
+    node {
+      cleanWs()
+      checkout scm
+    }
+  }
 node {
     /* .. snip .. */
     stage('Login') {
@@ -11,6 +17,7 @@ node {
       }
     }
 }
+
   // Run terraform init
   stage('init') {
       node {
@@ -68,3 +75,4 @@ node {
           }
         }
       }
+}
