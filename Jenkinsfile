@@ -44,8 +44,6 @@ node {
     }
   }
 
-  if (env.BRANCH_NAME == 'master') {
-
     // Run terraform apply
     stage('apply') {
       node {
@@ -59,7 +57,6 @@ node {
           }
         }
       }
-  }
 
     // Run terraform show
     stage('show') {
