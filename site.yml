@@ -6,4 +6,4 @@
   - name: complete terraform file
     template:
       src: vnet_template.tf.j2
-      dest: /home/main.tf
+      dest: ./main.tf
