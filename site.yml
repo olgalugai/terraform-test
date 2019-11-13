@@ -1,7 +1,8 @@
-hosts: localhost
-vars: 
-  cidr_address: [10.0.0.0/16]
-tasks:
+---
+- hosts: localhost
+  vars: 
+    cidr_address: [10.0.0.0/16]
+  tasks:
   - name: complete terraform file
     template:
       src: vnet_template.tf.j2
