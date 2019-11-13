@@ -17,6 +17,12 @@ node {
       }
     }
 }
+    stage ('ansible') {
+      node {
+        sh "ansible-playbook site.yml"
+      }
+
+    }
 
   // Run terraform init
   stage('init') {
