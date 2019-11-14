@@ -1,18 +1,14 @@
 variable "vnet_name" {
-    default = {{ vnet_name }}
+    default = "{{ vnet_name }}"
 }
 variable "subnet_name" {
-    default = {{ subnet_name }}
+    default = "{{ subnet_name }}"
 } 
 
 variable "subnet_cidr" {
-    default = {{ subnet_cidr }}
+    default = "{{ subnet_cidr }}"
 
 variable "rg_name" {
-    default = {{ rg_name }}
+    default = "{{ rg_name }}"
 }
 
-variable "subscription_id" {}
-variable "client_id" {}
-variable "client_secret" {}
-variable "tenant_id" {}
