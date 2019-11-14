@@ -1,4 +1,4 @@
 - name: execute roles
   hosts: localhost
   roles: 
-    - {role: base-networking}
+    - { role: base-networking }
