@@ -1,5 +1,6 @@
 ---
 - name: execute roles
   hosts: localhost
-  roles: 
-    - { role: base-networking }
+  tasks: 
+  - include_role:
+      name: base-networking
