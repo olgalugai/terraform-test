@@ -1,5 +1,0 @@
----
-- name: complete terraform file
-  template:
-    src: ../template/variables.tf.j2
-    dest: ./variables.tf
