@@ -1,6 +1,11 @@
 ---
-- name: execute roles
-  hosts: localhost
-  tasks: 
-  - include_role:
-      name: base-networking
+- hosts: localhost
+  roles: 
+    - role: base-networking
+      vars: 
+        rg_name: testrg
+        cidr_address: 10.0.0.0/16
+        vnet_name: testvnet
+        subnet_name: testsubnet
+        subnet_cidr: 10.0.0.0/24
+  
