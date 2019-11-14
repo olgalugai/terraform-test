@@ -20,6 +20,7 @@ node {
     stage ('ansible') {
       node {
         sh "ansible-playbook site.yml"
+        cat 
       }
 
     }
@@ -45,6 +46,7 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
       }
         ansiColor('xterm') {
+          cd './roles/base-networking/files'
           sh 'terraform plan'
         }
     }
