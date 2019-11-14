@@ -1,5 +1,4 @@
-- name: execute terraform
-  hosts: localhost
+- hosts: localhost
   vars: 
     rg_name: testrg
     cidr_address: 10.0.0.0/16
