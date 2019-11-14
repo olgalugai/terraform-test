@@ -65,7 +65,7 @@ node {
       }
 
     // Run terraform show
-    /*stage('show') {
+    stage('show') {
       node {
         withCredentials([azureServicePrincipal('principal-credentials-id')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
@@ -78,7 +78,7 @@ node {
           }
         }
       }
-      */
+      
     currentBuild.result = 'SUCCESS'
 }
 catch (err) {
