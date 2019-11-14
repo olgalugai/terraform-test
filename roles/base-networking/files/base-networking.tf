@@ -1,5 +1,5 @@
 module vnet {
-    source "../../../../../modules/CoreResources/base-networking"
+    source "/../../modules/CoreResources/base-networking"
     vnet_name   = "${var.vnet_name}"
     subnet_name = "${var.subnet_name}"
     subnet_cidr = "${var.subnet_cidr}"

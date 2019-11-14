@@ -1,8 +1,8 @@
 ---
 - hosts: localhost
   roles: 
-    - role: base-networking
-      vars: 
+    - base-networking
+  vars: 
         rg_name: testrg
         cidr_address: 10.0.0.0/16
         vnet_name: testvnet
