@@ -2,8 +2,8 @@
 - hosts: localhost
   vars:
     rg_name: testrg
-    cidr_address: 10.0.0.0/16
     vnet_name: testvnet
+    vnet_cidr: 10.0.0.0/16
     subnet_name: testsubnet
     subnet_cidr: 10.0.0.0/24
   tasks:

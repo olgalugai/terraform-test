@@ -4,4 +4,5 @@ variable "location" {
 variable "vnet_name" {}
 variable "subnet_name" {}
 variable "subnet_cidr" {}
+variable "vnet_cidr" {}
 variable "rg_name" {}
