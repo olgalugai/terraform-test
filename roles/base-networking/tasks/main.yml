@@ -2,4 +2,4 @@
 - name: complete terraform file
   template:
     src: ../template/variables.tf.j2
-    dest: ../files/variables.tf
+    dest: ./files/variables.tf
