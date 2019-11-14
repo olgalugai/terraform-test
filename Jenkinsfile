@@ -19,8 +19,7 @@ node {
 }
     stage ('ansible') {
       node {
-        sh 'cd ansible'
-        sh 'ansible-playbook site.yml'
+        sh 'cd ansible && ansible-playbook site.yml'
       }
 
     }
@@ -33,8 +32,7 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
         }
         ansiColor('xterm') {
-          sh 'cd terraform'
-          sh 'terraform init'
+          sh 'cd terraform && terraform init'
         }
       }
  }
@@ -47,8 +45,7 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
       }
         ansiColor('xterm') {
-          sh 'cd terraform'
-          sh 'terraform plan'
+          sh 'cd terraform && terraform plan'
         }
     }
   }
@@ -62,8 +59,7 @@ node {
             }
             
              ansiColor('xterm') {
-              sh 'cd terraform'
-              sh 'terraform apply -auto-approve'
+              sh 'cd terraform && terraform apply -auto-approve'
           }
         }
       }
