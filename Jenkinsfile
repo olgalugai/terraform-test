@@ -23,6 +23,13 @@ node {
       }
 
     }
+
+    stage ('validation') {
+      node {
+        sh 'cd .. && terraform validate'
+      }
+
+    }
       
     currentBuild.result = 'SUCCESS'
 }
