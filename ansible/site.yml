@@ -9,5 +9,5 @@
   tasks:
     - name: complete terraform file
       template:
-        src: ../modules/base_networking/main.tf.j2
-        dest: ../modules/base_networking/main.tf
+        src: ../modules/base-networking/main.tf.j2
+        dest: ../modules/base-networking/main.tf
