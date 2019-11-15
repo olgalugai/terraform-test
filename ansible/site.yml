@@ -9,5 +9,5 @@
   tasks:
     - name: complete terraform file
       template:
-        src: ./variables.tf.j2
-        dest: ../terraform/variables.tf
+        src: ../modules/base_networking/main.tf.j2
+        dest: ../modules/base_networking/main.tf

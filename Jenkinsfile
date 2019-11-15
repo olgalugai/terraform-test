@@ -32,7 +32,7 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
         }
         ansiColor('xterm') {
-          sh 'cd terraform && terraform init'
+          sh 'cd .. && cd terraform && terraform init'
         }
       }
  }
@@ -45,7 +45,7 @@ node {
             sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
       }
         ansiColor('xterm') {
-          sh 'cd terraform && terraform plan'
+          sh 'cd .. && cd terraform && terraform plan'
         }
     }
   }
@@ -59,7 +59,7 @@ node {
             }
             
              ansiColor('xterm') {
-              sh 'cd terraform && terraform apply -auto-approve'
+              sh 'cd .. && cd terraform && terraform apply -auto-approve'
           }
         }
       }
